@@ -3,7 +3,7 @@
 	"description": "The SilverStripe Framework Installer",
 	"require": {
 		"php": ">=5.3.2",
-		"md/cfo-project": "dev-3.2.x-blog-1.0"
+		"md/cfo-project": "dev-3.1.x-blog-1.0"
 
 	},
 	"config": {
