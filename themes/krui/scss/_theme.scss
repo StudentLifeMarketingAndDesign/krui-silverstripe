@@ -1,0 +1,28 @@
+.HomePage .main-nav {
+	margin-top: 65px;
+
+	a {
+		color: $primary-color;
+		text-shadow: none;
+	}
+}
+
+.main-nav {
+	margin-top: 55px;
+
+	a {
+		color: $primary-color;
+		text-shadow: none;
+	}
+
+	li.listen a {
+		background: $primary-color;
+		color: white;
+	}
+
+	@media #{$large-up} {
+		margin: 0.5em 0 .5em;
+	}
+
+	@media #{$xlarge-up} {}
+}
