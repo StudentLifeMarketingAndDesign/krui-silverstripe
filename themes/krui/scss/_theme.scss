@@ -8,11 +8,16 @@
 }
 
 .main-nav {
-	margin-top: 55px;
+	margin-top: 97px;
+	padding-top: 70px;
+	width: 80%;
 
 	a {
 		color: $primary-color;
 		text-shadow: none;
+
+		//padding: 5px 17px;
+
 	}
 
 	li.listen a {
