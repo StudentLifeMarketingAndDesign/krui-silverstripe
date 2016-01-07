@@ -47,13 +47,13 @@
 									<% if $YouTubeEmbed %>
 										$YouTubeEmbed
 									<% else %>
-										<a href="$AssociatedPage.Link">
+										<a href="$Link">
 											<img src="$FeaturedImage.Fill(644,390).URL" alt="$Title">
 										</a>
 									<% end_if %>
 									<div class="orbit-caption">
 										<% if $AssociatedPage %>
-											<a href="$AssociatedPage.Link">$Title</a>
+											<a href="$Link">$Title</a>
 										<% else %>
 											$Title
 										<% end_if %>
