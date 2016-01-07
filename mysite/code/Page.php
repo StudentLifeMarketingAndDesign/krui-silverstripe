@@ -58,6 +58,12 @@ class Page_Controller extends ContentController {
    
 	}
 
+	public function getBlogs(){
+  	
+      $blogs = BlogPost::get()->filter(array('ClassName' => 'BlogPost'));
+      return $blogs;
+
+   }		
 
 	
 }
