@@ -31,6 +31,35 @@
 		</div>
 			<div class="large-8 xlarge-9 columns">
 				<% include Nav %>
+				<div class="slider <% if $CarouselImages.Count < 2 %>single<% end_if %>">
+					<ul class="home-orbit" data-orbit data-options="
+						animation:slide;
+						animation_speed:1000;
+						pause_on_hover:true;
+						resume_on_mouseout: true;
+						navigation_arrows:true;
+						bullets:false;
+						timer_speed: 5000;">
+						<% loop CarouselImages.Limit(3) %>
+							<li>
+								<% if $YouTubeEmbed %>
+									$YouTubeEmbed
+								<% else %>
+									<a href="$AssociatedPage.Link">
+										<img src="$Image.Fill(644,390).URL" alt="$Title">
+									</a>
+								<% end_if %>
+								<div class="orbit-caption">
+									<% if $AssociatedPage %>
+										<a href="$AssociatedPage.Link">$Title</a>
+									<% else %>
+										$Title
+									<% end_if %>
+								</div>
+							</li>
+						<% end_loop %>
+					</ul>
+			</div>
 
 				<div class="slider <% if $getBlogs.Count < 2 %>single<% end_if %>">
 					<ul class="home-orbit" data-orbit data-options="
@@ -52,11 +81,7 @@
 										</a>
 									<% end_if %>
 									<div class="orbit-caption">
-										<% if $AssociatedPage %>
-											<a href="$Link">$Title</a>
-										<% else %>
-											$Title
-										<% end_if %>
+										<a href="$Link">$Title</a>
 									</div>
 								</li>
 							<% end_loop %>
