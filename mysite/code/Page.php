@@ -60,7 +60,7 @@ class Page_Controller extends ContentController {
 
 	public function getBlogs(){
   	
-      $blogs = BlogPost::get()->filter(array('ClassName' => 'BlogPost'));
+      $blogs = BlogPost::get()->filter(array('FeaturedImageID:not' => 0));
       return $blogs;
 
    }		

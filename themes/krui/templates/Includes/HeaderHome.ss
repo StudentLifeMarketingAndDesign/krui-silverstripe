@@ -42,7 +42,7 @@
 						bullets:false;
 						timer_speed: 5000;">
 						
-							<% loop getBlogs.Limit(8) %>
+							<% loop getBlogs.Limit(3) %>
 								<li>
 									<% if $YouTubeEmbed %>
 										$YouTubeEmbed
