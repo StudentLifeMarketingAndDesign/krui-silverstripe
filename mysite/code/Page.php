@@ -2,31 +2,39 @@
 class Page extends SiteTree {
 
 	private static $db = array(
-		
+
 	);
 
 	private static $has_one = array(
 	);
 
-
-	private static $many_many = array (
+	private static $many_many = array(
 	);
 
-    private static $many_many_extraFields=array(
-      );
+	private static $many_many_extraFields = array(
+	);
 
-    private static $plural_name = "Pages";
+	private static $plural_name = "Pages";
 
-	private static $defaults = array ();
+	private static $defaults = array();
 
-
-	public function getCMSFields(){
+	public function getCMSFields() {
 		$f = parent::getCMSFields();
-		
+
 		return $f;
 	}
 
-	
+	public function getFirstImage() {
+		$pattern = '/<img[^>]+src[\\s=\'"]';
+		$pattern .= '+([^"\'>\\s]+)/is';
+
+		if (preg_match_all($pattern, $content, $match)) {
+			$imageLink = preg_replace('/_resampled\/resizedimage[0-9]*-/', '', $match[1][0]);
+
+			return (string) $imageLink;
+		}
+	}
+
 }
 class Page_Controller extends ContentController {
 
@@ -45,7 +53,7 @@ class Page_Controller extends ContentController {
 	 *
 	 * @var array
 	 */
-	private static $allowed_actions = array (
+	private static $allowed_actions = array(
 	);
 
 	public function init() {
@@ -55,15 +63,13 @@ class Page_Controller extends ContentController {
 		// instead of putting Requirements calls here.  However these are
 		// included so that our older themes still work
 
-   
 	}
 
-	public function getBlogs(){
-  	
-      $blogs = BlogPost::get()->filter(array('FeaturedImageID:not' => 0));
-      return $blogs;
+	public function getBlogs() {
 
-   }		
+		$blogs = BlogPost::get()->filter(array('FeaturedImageID:not' => 0));
+		return $blogs;
 
-	
+	}
+
 }

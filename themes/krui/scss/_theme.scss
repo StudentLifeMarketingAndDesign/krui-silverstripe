@@ -1,5 +1,5 @@
 .HomePage .main-nav {
-	margin-top: 97px;
+	//margin-top: 55px;
 
 	a {
 		color: $primary-color;
@@ -7,9 +7,18 @@
 	}
 }
 
+.home-quicklinks li {
+	border-top: 1px solid rgba(159, 159, 159, 0.3);
+}
+
+.home-quicklinks .quicklinks-title {
+	color: #707070;
+	text-shadow: none;
+}
+
 .main-nav {
 	margin-top: 97px;
-	padding-top: 70px;
+	padding-top: 55px;
 	width: 80%;
 
 	a {

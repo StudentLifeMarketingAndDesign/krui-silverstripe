@@ -1,6 +1,6 @@
 <header class="header" role="banner">
 	<div class="row collapse">
-		<div class="large-4 xlarge-3 columns">
+		<div class="large-4 columns">
 			<div class="logo-quicklinks">
 				<% include HeaderLogo %>
 				<% include NavMobile %>
@@ -29,7 +29,7 @@
 				<% end_if %>
 			</div>
 		</div>
-			<div class="large-8 xlarge-9 columns">
+			<div class="large-8 columns">
 				<% include Nav %>
 				<div class="slider <% if $CarouselImages.Count < 2 %>single<% end_if %>">
 					<ul class="home-orbit" data-orbit data-options="
